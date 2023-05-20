@@ -1,0 +1,7 @@
+public class TestThisMess{
+  public static void main(String [] args){
+    MyMainCode mmc = new MyMainCode();
+    CSEStudent cs = new CSEStudent();
+    
+  }
+}

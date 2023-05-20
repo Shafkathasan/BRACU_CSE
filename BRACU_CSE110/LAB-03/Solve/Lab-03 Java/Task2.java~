@@ -1,0 +1,16 @@
+//Write a java program that reads two integers from the user, and prints their sum, product and difference.
+import java.util.Scanner;
+public class Task2
+{
+    public static void main(String[] args)
+    {
+        Scanner keyboard;
+        keyboard = new Scanner ( System.in );
+        System.out.println("Please Enter 1st Integer Number");
+        int x = keyboard.nextInt();
+        System.out.println("Please Enter 2nd integer Number");
+        int y= keyboard.nextInt();
+
+        System.out.println(x+y);
+    }
+}

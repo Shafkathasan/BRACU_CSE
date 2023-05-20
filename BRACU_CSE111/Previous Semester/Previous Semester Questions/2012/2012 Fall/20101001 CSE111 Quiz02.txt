@@ -1,0 +1,9 @@
+CSE111 Quiz02 question)
+
+Ask how many numbers the user wants to enter, take that many numbers. Then using enhanced for loop, print those numbers. Assume following code snippet is already given:
+
+import java.util.*;
+public class Quiz02 {
+    public static void main(String[] args) {
+        Scanner k = new Scanner(System.in); // you can use any variable name instead of k
+        // write your code here

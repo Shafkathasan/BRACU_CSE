@@ -1,0 +1,9 @@
+public class ClassTester{
+  public static doSomething(SomeClass s){
+    s.badThingsHappen();
+  }
+  public static void main(String [] args){
+    SomeClass sc = new SomeClass();
+    doSomething(sc);
+  }
+}

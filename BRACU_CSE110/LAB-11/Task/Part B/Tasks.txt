@@ -1,0 +1,5 @@
+b1) Analyze "LearningRecursion.java" and modify the given program so that it prints 1 to n instead of n to 1.
+
+b2) Analyze and modify the given program so that it reads all numbers from input.txt and prints maximum, minimum and average in output.txt
+
+b3) Final Review and Lab Exam

@@ -1,0 +1,7 @@
+public class CSEStudent{
+  String name;
+  String dpt;
+  public double cgpa(){
+    return 2.0;
+  }
+}

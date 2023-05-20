@@ -1,0 +1,5 @@
+4 100
+Ralph 80
+John70
+Tom40
+Young50

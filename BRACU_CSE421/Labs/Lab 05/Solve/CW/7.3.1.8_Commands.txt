@@ -1,0 +1,121 @@
+R1
+
+R1>en
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#ip route 0.0.0.0 0.0.0.0 s0/0/1
+R1(config)#route rip
+R1(config-router)#version 2
+R1(config-router)#no auto-summary
+R1(config-router)#network 192.168.1.1
+R1(config-router)#no network 192.168.1.1
+R1(config-router)#network 192.168.1.0
+R1(config-router)#network 192.168.2.0
+R1(config-router)#passvie-interface g0/0
+                      ^
+% Invalid input detected at '^' marker.
+	
+R1(config-router)#passive-interface g0/0
+R1(config-router)#default-information originate
+R1(config-router)#end
+R1#
+%SYS-5-CONFIG_I: Configured from console by console
+
+R1#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is 0.0.0.0 to network 0.0.0.0
+
+     192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.1.0/24 is directly connected, GigabitEthernet0/0
+L       192.168.1.1/32 is directly connected, GigabitEthernet0/0
+     192.168.2.0/24 is variably subnetted, 2 subnets, 2 masks
+C       192.168.2.0/24 is directly connected, Serial0/0/0
+L       192.168.2.1/32 is directly connected, Serial0/0/0
+     209.165.200.0/24 is variably subnetted, 2 subnets, 2 masks
+C       209.165.200.224/30 is directly connected, Serial0/0/1
+L       209.165.200.225/32 is directly connected, Serial0/0/1
+S*   0.0.0.0/0 is directly connected, Serial0/0/1
+
+R1#show ip route rip
+     209.165.200.0/24 is variably subnetted, 2 subnets, 2 masks
+
+R1#show ip route rip
+     192.168.2.0/24 is variably subnetted, 2 subnets, 2 masks
+R    192.168.3.0/24 [120/1] via 192.168.2.2, 00:00:05, Serial0/0/0
+R    192.168.4.0/24 [120/1] via 192.168.2.2, 00:00:05, Serial0/0/0
+R    192.168.5.0/24 [120/2] via 192.168.2.2, 00:00:05, Serial0/0/0
+     209.165.200.0/24 is variably subnetted, 2 subnets, 2 masks
+
+R1#ping 64.100.0.10
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 64.100.0.10, timeout is 2 seconds:
+.!!!!
+Success rate is 80 percent (4/5), round-trip min/avg/max = 9/11/13 ms
+
+R1#copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+R1#
+
+
+R2
+
+R2>en
+R2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#router rip
+R2(config-router)#version 2
+R2(config-router)#no auto-summary
+R2(config-router)#network 192.168.2.0
+R2(config-router)#network 192.168.3.0
+R2(config-router)#network 192.168.4.0
+R2(config-router)#passive-interface g0/0
+R2(config-router)#end
+R2#
+%SYS-5-CONFIG_I: Configured from console by console
+
+R2#copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+R2#
+
+
+R3
+R3>e
+% Ambiguous command: "e"
+R3>en
+R3#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R3(config)#router rip
+R3(config-router)#version 2
+R3(config-router)#no auto-summery
+                              ^
+% Invalid input detected at '^' marker.
+	
+R3(config-router)#no auto-summary
+R3(config-router)#do show ip route connected
+ C   192.168.4.0/24  is directly connected, Serial0/0/1
+ C   192.168.5.0/24  is directly connected, GigabitEthernet0/0
+
+R3(config-router)#network 192.168.4.0
+R3(config-router)#network 192.168.5.0
+R3(config-router)#passive-int g0/0
+R3(config-router)#end
+R3#
+%SYS-5-CONFIG_I: Configured from console by console
+
+R3#copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+R3#

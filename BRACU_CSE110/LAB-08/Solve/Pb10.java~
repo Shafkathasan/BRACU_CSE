@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Pb10
+{
+    public static void main(String[] args) 
+    { 
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Please Enter Triangle Height: ");
+        int size = sc.nextInt();
+        int columnC=1, spaceC=size-1;
+        for(int lineC=1; lineC<=size; ++lineC)
+        {
+            for(int numC=1; numC<=spaceC; ++numC)
+            {
+                System.out.print(" ");
+            }
+            for(int numC=1; numC<=columnC; ++numC)
+            {
+                System.out.print(numC);
+            }
+            System.out.println();
+            columnC+=2;
+            --spaceC;
+        }
+    }
+}
+

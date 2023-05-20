@@ -1,0 +1,400 @@
+PC1
+
+Cisco Packet Tracer PC Command Line 1.0
+C:\>ipconfig /all
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 0060.47CA.4DEE
+   Link-local IPv6 Address.........: FE80::260:47FF:FECA:4DEE
+   IPv6 Address....................: ::
+   IPv4 Address....................: 10.10.1.98
+   Subnet Mask.....................: 255.255.255.224
+   Default Gateway.................: ::
+                                     10.10.1.97
+   DHCP Servers....................: 0.0.0.0
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-B2-33-AD-8B-00-60-47-CA-4D-EE
+   DNS Servers.....................: ::
+                                     0.0.0.0
+
+Bluetooth Connection:
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 000C.8599.E691
+   Link-local IPv6 Address.........: ::
+   IPv6 Address....................: ::
+   IPv4 Address....................: 0.0.0.0
+   Subnet Mask.....................: 0.0.0.0
+   Default Gateway.................: ::
+                                     0.0.0.0
+   DHCP Servers....................: 0.0.0.0
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-B2-33-AD-8B-00-60-47-CA-4D-EE
+   DNS Servers.....................: ::
+                                     0.0.0.0
+
+
+C:\>ping 10.10.1.18
+
+Pinging 10.10.1.18 with 32 bytes of data:
+
+Reply from 10.10.1.97: Destination host unreachable.
+Reply from 10.10.1.97: Destination host unreachable.
+Reply from 10.10.1.97: Destination host unreachable.
+Reply from 10.10.1.97: Destination host unreachable.
+
+Ping statistics for 10.10.1.18:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\>tracert 10.10.1.18
+
+Tracing route to 10.10.1.18 over a maximum of 30 hops: 
+
+  1   0 ms      0 ms      0 ms      10.10.1.97
+  2   0 ms      *         0 ms      10.10.1.97
+  3   *         0 ms      *         Request timed out.
+  4   0 ms      *         0 ms      10.10.1.97
+  5   *         4 ms      *         Request timed out.
+  6   0 ms      *         0 ms      10.10.1.97
+  7   
+Control-C
+^C
+C:\>tracert 10.10.1.18
+
+Tracing route to 10.10.1.18 over a maximum of 30 hops: 
+
+  1   0 ms      0 ms      0 ms      10.10.1.97
+  2   0 ms      6 ms      4 ms      10.10.1.5
+  3   1 ms      9 ms      14 ms     10.10.1.10
+  4   0 ms      4 ms      4 ms      10.10.1.18
+
+Trace complete.
+
+C:\>
+
+
+PC2
+
+Cisco Packet Tracer PC Command Line 1.0
+C:\>ipv6config /all
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 00E0.B035.82B8
+   Link-local IPv6 Address.........: FE80::2E0:B0FF:FE35:82B8
+   IPv6 Address....................: 2001:DB8:1:1::2
+   Default Gateway.................: FE80::1
+   DNS Servers.....................: ::
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-15-A9-3E-85-00-E0-B0-35-82-B8
+
+Bluetooth Connection:
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 0001.4391.C48B
+   Link-local IPv6 Address.........: ::
+   IPv6 Address....................: ::
+   Default Gateway.................: ::
+   DNS Servers.....................: ::
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-15-A9-3E-85-00-E0-B0-35-82-B8
+
+C:\>ping 2001:DB8:1:4::2
+
+Pinging 2001:DB8:1:4::2 with 32 bytes of data:
+
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 2001:DB8:1:4::2:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\>tracart 2001:DB8:1:4::2
+Invalid Command.
+
+C:\>tracert 2001:DB8:1:4::2
+
+Tracing route to 2001:DB8:1:4::2 over a maximum of 30 hops: 
+
+  1   0 ms      0 ms      0 ms      2001:DB8:1:1::1
+  2   0 ms      0 ms      0 ms      2001:DB8:1:2::1
+  3   14 ms     1 ms      5 ms      2001:DB8:1:3::2
+  4   *         *         *         Request timed out.
+  5   *         
+Control-C
+^C
+C:\>ping 2001:DB8:1:4::2
+
+Pinging 2001:DB8:1:4::2 with 32 bytes of data:
+
+Reply from 2001:DB8:1:4::2: bytes=32 time=16ms TTL=125
+Reply from 2001:DB8:1:4::2: bytes=32 time=18ms TTL=125
+Reply from 2001:DB8:1:4::2: bytes=32 time=17ms TTL=125
+Reply from 2001:DB8:1:4::2: bytes=32 time=10ms TTL=125
+
+Ping statistics for 2001:DB8:1:4::2:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 10ms, Maximum = 18ms, Average = 15ms
+
+C:\>
+
+
+PC3
+
+Cisco Packet Tracer PC Command Line 1.0
+C:\>ipconfig /all
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 0060.7034.6930
+   Link-local IPv6 Address.........: FE80::260:70FF:FE34:6930
+   IPv6 Address....................: ::
+   IPv4 Address....................: 10.10.1.18
+   Subnet Mask.....................: 255.255.255.240
+   Default Gateway.................: ::
+                                     10.10.1.17
+   DHCP Servers....................: 0.0.0.0
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-82-76-04-5A-00-60-70-34-69-30
+   DNS Servers.....................: ::
+                                     0.0.0.0
+
+Bluetooth Connection:
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 0001.9726.C843
+   Link-local IPv6 Address.........: ::
+   IPv6 Address....................: ::
+   IPv4 Address....................: 0.0.0.0
+   Subnet Mask.....................: 0.0.0.0
+   Default Gateway.................: ::
+                                     0.0.0.0
+   DHCP Servers....................: 0.0.0.0
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-82-76-04-5A-00-60-70-34-69-30
+   DNS Servers.....................: ::
+                                     0.0.0.0
+
+
+C:\>tracert 10.10.1.98
+
+Tracing route to 10.10.1.98 over a maximum of 30 hops: 
+
+  1   0 ms      0 ms      0 ms      10.10.1.17
+  2   3 ms      *         0 ms      10.10.1.17
+  3   *         0 ms      *         Request timed out.
+  4   0 ms      *         0 ms      10.10.1.17
+  5   *         0 ms      *         Request timed out.
+  6   0 ms      
+Control-C
+^C
+C:\>ping 10.10.1.98
+
+Pinging 10.10.1.98 with 32 bytes of data:
+
+Reply from 10.10.1.98: bytes=32 time=31ms TTL=125
+Reply from 10.10.1.98: bytes=32 time=29ms TTL=125
+Reply from 10.10.1.98: bytes=32 time=13ms TTL=125
+Reply from 10.10.1.98: bytes=32 time=15ms TTL=125
+
+Ping statistics for 10.10.1.98:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 13ms, Maximum = 31ms, Average = 22ms
+
+C:\>
+
+
+PC4
+Cisco Packet Tracer PC Command Line 1.0
+C:\>ipv6config /all
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 0006.2ABC.7CD4
+   Link-local IPv6 Address.........: FE80::206:2AFF:FEBC:7CD4
+   IPv6 Address....................: 2001:DB8:1:4::2
+   Default Gateway.................: FE80::2
+   DNS Servers.....................: ::
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-54-60-98-B7-00-06-2A-BC-7C-D4
+
+Bluetooth Connection:
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 00D0.FF7D.AD44
+   Link-local IPv6 Address.........: ::
+   IPv6 Address....................: ::
+   Default Gateway.................: ::
+   DNS Servers.....................: ::
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-54-60-98-B7-00-06-2A-BC-7C-D4
+
+C:\>tracert 2001:DB8:1:1::2
+
+Tracing route to 2001:DB8:1:1::2 over a maximum of 30 hops: 
+
+  1   *         *         *         Request timed out.
+  2   *         *         *         Request timed out.
+  3   
+Control-C
+^C
+C:\>ping 2001:DB8:1:1::2
+
+Pinging 2001:DB8:1:1::2 with 32 bytes of data:
+
+Reply from 2001:DB8:1:1::2: bytes=32 time=30ms TTL=125
+Reply from 2001:DB8:1:1::2: bytes=32 time=23ms TTL=125
+Reply from 2001:DB8:1:1::2: bytes=32 time=26ms TTL=125
+Reply from 2001:DB8:1:1::2: bytes=32 time=4ms TTL=125
+
+Ping statistics for 2001:DB8:1:1::2:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 4ms, Maximum = 30ms, Average = 20ms
+
+C:\>
+
+R1
+
+User Access Verification
+
+Password: 
+
+R1>en
+Password: 
+R1#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     unassigned      YES unset  up                    up 
+GigabitEthernet0/1     10.10.1.97      YES manual up                    up 
+Serial0/0/0            unassigned      YES unset  administratively down down 
+Serial0/0/1            10.10.1.6       YES manual up                    up 
+Vlan1                  unassigned      YES unset  administratively down down
+R1#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/8 is variably subnetted, 4 subnets, 3 masks
+C       10.10.1.4/30 is directly connected, Serial0/0/1
+L       10.10.1.6/32 is directly connected, Serial0/0/1
+C       10.10.1.96/27 is directly connected, GigabitEthernet0/1
+L       10.10.1.97/32 is directly connected, GigabitEthernet0/1
+
+R1#
+
+
+R2
+
+User Access Verification
+
+Password: 
+
+R2>en
+Password: 
+R2#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     unassigned      YES unset  administratively down down 
+GigabitEthernet0/1     unassigned      YES unset  administratively down down 
+Serial0/0/0            10.10.1.2       YES manual up                    up 
+Serial0/0/1            10.10.1.9       YES manual up                    up 
+Vlan1                  unassigned      YES unset  administratively down down
+R2#int s0/0/0
+       ^
+% Invalid input detected at '^' marker.
+	
+R2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#int s0/0/0
+R2(config-if)#ip address 10.10.1.5 255.255.255.252
+R2(config-if)#
+%DUAL-5-NBRCHANGE: IP-EIGRP 1: Neighbor 10.10.1.6 (Serial0/0/0) is up: new adjacency
+
+R2(config-if)#now shut down
+                ^
+% Invalid input detected at '^' marker.
+	
+R2(config-if)#now shutdown
+                ^
+% Invalid input detected at '^' marker.
+	
+R2(config-if)#no shut down
+R2(config-if)#exit
+R2(config)#
+
+
+R3
+
+User Access Verification
+
+Password: 
+Password: 
+
+R3>en
+Password: 
+R3#ip inteface brief
+      ^
+% Invalid input detected at '^' marker.
+	
+R3#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     unassigned      YES unset  up                    up 
+GigabitEthernet0/1     10.10.1.17      YES manual up                    up 
+Serial0/0/0            unassigned      YES unset  administratively down down 
+Serial0/0/1            10.10.1.10      YES manual up                    up 
+Vlan1                  unassigned      YES unset  administratively down down
+R3#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/8 is variably subnetted, 4 subnets, 3 masks
+C       10.10.1.8/30 is directly connected, Serial0/0/1
+L       10.10.1.10/32 is directly connected, Serial0/0/1
+C       10.10.1.16/28 is directly connected, GigabitEthernet0/1
+L       10.10.1.17/32 is directly connected, GigabitEthernet0/1
+
+R3#
+
+User Access Verification
+
+Password: 
+Password: 
+Password: 
+
+R3>en
+Password: 
+R3#show ipv6 interface brief
+GigabitEthernet0/0         [up/up]
+    FE80::3
+    2001:DB8:1:4::1
+GigabitEthernet0/1         [up/up]
+    unassigned
+Serial0/0/0                [administratively down/down]
+    unassigned
+Serial0/0/1                [up/up]
+    FE80::3
+    2001:DB8:1:3::2
+Vlan1                      [administratively down/down]
+    unassigned
+R3#

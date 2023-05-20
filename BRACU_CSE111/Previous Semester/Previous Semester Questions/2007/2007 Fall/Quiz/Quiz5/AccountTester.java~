@@ -1,0 +1,7 @@
+public class AccountTester{
+
+  public static void printInfo(Account a){
+    
+  }
+
+}

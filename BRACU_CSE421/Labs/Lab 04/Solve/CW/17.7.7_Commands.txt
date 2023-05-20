@@ -1,0 +1,465 @@
+PC-01
+
+Cisco Packet Tracer PC Command Line 1.0
+C:\>ipconfig /all
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 0030.F2D8.3C0A
+   Link-local IPv6 Address.........: FE80::2
+   IPv6 Address....................: 2001:DB8:ACAD::2
+   IPv4 Address....................: 172.168.1.3
+   Subnet Mask.....................: 255.255.255.0
+   Default Gateway.................: FE80::1
+                                     172.16.1.1
+   DHCP Servers....................: 0.0.0.0
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-52-A7-D4-C9-00-30-F2-D8-3C-0A
+   DNS Servers.....................: 2001:DB8:CAFE::3
+                                     209.165.201.3
+
+Bluetooth Connection:
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 0060.47B1.DD31
+   Link-local IPv6 Address.........: ::
+   IPv6 Address....................: ::
+   IPv4 Address....................: 0.0.0.0
+   Subnet Mask.....................: 0.0.0.0
+   Default Gateway.................: ::
+                                     0.0.0.0
+   DHCP Servers....................: 0.0.0.0
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-52-A7-D4-C9-00-30-F2-D8-3C-0A
+   DNS Servers.....................: ::
+                                     209.165.201.3
+
+
+C:\>ping 172.16.1.1
+
+Pinging 172.16.1.1 with 32 bytes of data:
+
+Reply from 172.16.1.1: bytes=32 time<1ms TTL=255
+Reply from 172.16.1.1: bytes=32 time<1ms TTL=255
+Reply from 172.16.1.1: bytes=32 time<1ms TTL=255
+Reply from 172.16.1.1: bytes=32 time<1ms TTL=255
+
+Ping statistics for 172.16.1.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\>ping 209.165.201.2
+
+Pinging 209.165.201.2 with 32 bytes of data:
+
+Request timed out.
+Reply from 209.165.201.2: bytes=32 time=12ms TTL=126
+Reply from 209.165.201.2: bytes=32 time=10ms TTL=126
+Reply from 209.165.201.2: bytes=32 time=10ms TTL=126
+
+Ping statistics for 209.165.201.2:
+    Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 10ms, Maximum = 12ms, Average = 10ms
+
+C:\>ping 172.16.1.4
+
+Pinging 172.16.1.4 with 32 bytes of data:
+
+Reply from 172.16.1.4: bytes=32 time<1ms TTL=128
+Reply from 172.16.1.4: bytes=32 time<1ms TTL=128
+Reply from 172.16.1.4: bytes=32 time<1ms TTL=128
+Reply from 172.16.1.4: bytes=32 time<1ms TTL=128
+
+Ping statistics for 172.16.1.4:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\>ping 172.16.2.3
+
+Pinging 172.16.2.3 with 32 bytes of data:
+
+Reply from 209.165.200.225: Destination host unreachable.
+Reply from 209.165.200.225: Destination host unreachable.
+Reply from 209.165.200.225: Destination host unreachable.
+Reply from 209.165.200.225: Destination host unreachable.
+
+Ping statistics for 172.16.2.3:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\>ping 172.16.2.4
+
+Pinging 172.16.2.4 with 32 bytes of data:
+
+Reply from 209.165.200.225: Destination host unreachable.
+Reply from 209.165.200.225: Destination host unreachable.
+Reply from 209.165.200.225: Destination host unreachable.
+Reply from 209.165.200.225: Destination host unreachable.
+
+Ping statistics for 172.16.2.4:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\>SSH
+Cisco Packet Tracer PC SSH
+
+Usage: SSH -l username target
+
+C:\>SSH -1 Admin01 172.16.1.1
+Invalid Command.
+
+C:\>SSH -l Admin01 172.16.1.1
+
+Password: 
+
+Warning: Unauthorized Access is Prohibited.
+
+R1#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     172.16.1.1      YES manual up                    up 
+GigabitEthernet0/1     172.16.3.1      YES manual up                    up 
+Serial0/0/0            209.165.200.226 YES manual up                    up 
+Serial0/0/1            unassigned      YES unset  down                  down 
+Vlan1                  unassigned      YES unset  administratively down down
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#int g0/1
+R1(config-if)#ip address 172.16.2.1 255.255.255.0
+R1(config-if)#no shutdown
+R1(config-if)#exit
+R1(config)#exit
+R1#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     172.16.1.1      YES manual up                    up 
+GigabitEthernet0/1     172.16.2.1      YES manual up                    up 
+Serial0/0/0            209.165.200.226 YES manual up                    up 
+Serial0/0/1            unassigned      YES unset  down                  down 
+Vlan1                  unassigned      YES unset  administratively down down
+R1#
+
+[Connection to 172.16.1.1 closed by foreign host]
+C:\>
+
+
+PC-02
+
+Cisco Packet Tracer PC Command Line 1.0
+C:\>ipconfig /all
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 000C.85CC.B602
+   Link-local IPv6 Address.........: FE80::2
+   IPv6 Address....................: 2001:DB8:ACAD::3
+   IPv4 Address....................: 172.16.1.4
+   Subnet Mask.....................: 255.255.255.0
+   Default Gateway.................: FE80::1
+                                     172.16.1.11
+   DHCP Servers....................: 0.0.0.0
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-B9-D3-74-8C-00-0C-85-CC-B6-02
+   DNS Servers.....................: 2001:DB8:CAFE::4
+                                     209.165.201.3
+
+Bluetooth Connection:
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 000C.8567.917A
+   Link-local IPv6 Address.........: ::
+   IPv6 Address....................: ::
+   IPv4 Address....................: 0.0.0.0
+   Subnet Mask.....................: 0.0.0.0
+   Default Gateway.................: ::
+                                     0.0.0.0
+   DHCP Servers....................: 0.0.0.0
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-B9-D3-74-8C-00-0C-85-CC-B6-02
+   DNS Servers.....................: ::
+                                     209.165.201.3
+
+
+C:\>ping 172.16.1.1
+
+Pinging 172.16.1.1 with 32 bytes of data:
+
+Reply from 172.16.1.1: bytes=32 time<1ms TTL=255
+Reply from 172.16.1.1: bytes=32 time=2ms TTL=255
+Reply from 172.16.1.1: bytes=32 time<1ms TTL=255
+Reply from 172.16.1.1: bytes=32 time<1ms TTL=255
+
+Ping statistics for 172.16.1.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 2ms, Average = 0ms
+
+C:\>ping 209.165.201.2
+
+Pinging 209.165.201.2 with 32 bytes of data:
+
+Reply from 209.165.201.2: bytes=32 time=21ms TTL=126
+Reply from 209.165.201.2: bytes=32 time=19ms TTL=126
+Reply from 209.165.201.2: bytes=32 time=1ms TTL=126
+Reply from 209.165.201.2: bytes=32 time=21ms TTL=126
+
+Ping statistics for 209.165.201.2:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 21ms, Average = 15ms
+
+C:\>ping 172.16.1.3
+
+Pinging 172.16.1.3 with 32 bytes of data:
+
+Reply from 172.16.1.3: bytes=32 time<1ms TTL=128
+Reply from 172.16.1.3: bytes=32 time<1ms TTL=128
+Reply from 172.16.1.3: bytes=32 time<1ms TTL=128
+Reply from 172.16.1.3: bytes=32 time<1ms TTL=128
+
+Ping statistics for 172.16.1.3:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\>ping 172.16.2.3
+
+Pinging 172.16.2.3 with 32 bytes of data:
+
+Reply from 209.165.200.225: Destination host unreachable.
+Reply from 209.165.200.225: Destination host unreachable.
+Reply from 209.165.200.225: Destination host unreachable.
+Reply from 209.165.200.225: Destination host unreachable.
+
+Ping statistics for 172.16.2.3:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\>ping 172.16.2.4
+
+Pinging 172.16.2.4 with 32 bytes of data:
+
+Reply from 209.165.200.225: Destination host unreachable.
+Reply from 209.165.200.225: Destination host unreachable.
+Reply from 209.165.200.225: Destination host unreachable.
+Reply from 209.165.200.225: Destination host unreachable.
+
+Ping statistics for 172.16.2.4:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\>
+
+
+PC-A
+
+Cisco Packet Tracer PC Command Line 1.0
+C:\>ipconfig /all
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 000B.BEB5.63B2
+   Link-local IPv6 Address.........: FE80::2
+   IPv6 Address....................: 2001:DB8:ACAD:1::2
+   IPv4 Address....................: 172.16.2.3
+   Subnet Mask.....................: 255.255.255.0
+   Default Gateway.................: FE80::1
+                                     172.16.2.1
+   DHCP Servers....................: 0.0.0.0
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-8D-89-37-EC-00-0B-BE-B5-63-B2
+   DNS Servers.....................: 2001:DB8:CAFE::3
+                                     209.165.201.3
+
+Bluetooth Connection:
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 0001.9724.52B4
+   Link-local IPv6 Address.........: ::
+   IPv6 Address....................: ::
+   IPv4 Address....................: 0.0.0.0
+   Subnet Mask.....................: 0.0.0.0
+   Default Gateway.................: ::
+                                     0.0.0.0
+   DHCP Servers....................: 0.0.0.0
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-8D-89-37-EC-00-0B-BE-B5-63-B2
+   DNS Servers.....................: ::
+                                     209.165.201.3
+
+
+C:\>ping 209.165.201.2
+
+Pinging 209.165.201.2 with 32 bytes of data:
+
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 209.165.201.2:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\>ping 172.16.2.1
+
+Pinging 172.16.2.1 with 32 bytes of data:
+
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 172.16.2.1:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\>ping 172.16.2.4
+
+Pinging 172.16.2.4 with 32 bytes of data:
+
+Reply from 172.16.2.4: bytes=32 time<1ms TTL=128
+Reply from 172.16.2.4: bytes=32 time<1ms TTL=128
+Reply from 172.16.2.4: bytes=32 time=1ms TTL=128
+Reply from 172.16.2.4: bytes=32 time<1ms TTL=128
+
+Ping statistics for 172.16.2.4:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+C:\>ping 172.16.1.3
+
+Pinging 172.16.1.3 with 32 bytes of data:
+
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 172.16.1.3:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\>ping 172.16.1.4
+
+Pinging 172.16.1.4 with 32 bytes of data:
+
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 172.16.1.4:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\>
+
+
+PC-B
+
+Cisco Packet Tracer PC Command Line 1.0
+C:\>ipconfig /all
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 0001.6384.B18C
+   Link-local IPv6 Address.........: FE80::4
+   IPv6 Address....................: 2001:DB8:ACAD:1::4
+   IPv4 Address....................: 172.16.2.4
+   Subnet Mask.....................: 255.255.255.0
+   Default Gateway.................: FE80::1
+                                     172.16.2.1
+   DHCP Servers....................: 0.0.0.0
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-8D-89-37-EC-00-01-63-84-B1-8C
+   DNS Servers.....................: 2001:DB8:CAFE::3
+                                     209.165.201.4
+
+Bluetooth Connection:
+
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 0010.1177.D60C
+   Link-local IPv6 Address.........: ::
+   IPv6 Address....................: ::
+   IPv4 Address....................: 0.0.0.0
+   Subnet Mask.....................: 0.0.0.0
+   Default Gateway.................: ::
+                                     0.0.0.0
+   DHCP Servers....................: 0.0.0.0
+   DHCPv6 IAID.....................: 
+   DHCPv6 Client DUID..............: 00-01-00-01-8D-89-37-EC-00-01-63-84-B1-8C
+   DNS Servers.....................: ::
+                                     209.165.201.4
+
+
+C:\>ping 209.165.201.2
+
+Pinging 209.165.201.2 with 32 bytes of data:
+
+Reply from 209.165.201.2: bytes=32 time=1ms TTL=126
+Reply from 209.165.201.2: bytes=32 time=14ms TTL=126
+Reply from 209.165.201.2: bytes=32 time=16ms TTL=126
+Reply from 209.165.201.2: bytes=32 time=13ms TTL=126
+
+Ping statistics for 209.165.201.2:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 16ms, Average = 11ms
+
+C:\>ping 172.16.2.1
+
+Pinging 172.16.2.1 with 32 bytes of data:
+
+Reply from 172.16.2.1: bytes=32 time<1ms TTL=255
+Reply from 172.16.2.1: bytes=32 time<1ms TTL=255
+Reply from 172.16.2.1: bytes=32 time<1ms TTL=255
+Reply from 172.16.2.1: bytes=32 time<1ms TTL=255
+
+Ping statistics for 172.16.2.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\>ping 172.16.2.3
+
+Pinging 172.16.2.3 with 32 bytes of data:
+
+Reply from 172.16.2.3: bytes=32 time<1ms TTL=128
+Reply from 172.16.2.3: bytes=32 time=11ms TTL=128
+Reply from 172.16.2.3: bytes=32 time=1ms TTL=128
+Reply from 172.16.2.3: bytes=32 time<1ms TTL=128
+
+Ping statistics for 172.16.2.3:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 11ms, Average = 3ms
+
+C:\>ping 172.16.1.3
+
+Pinging 172.16.1.3 with 32 bytes of data:
+
+Reply from 172.16.1.3: bytes=32 time<1ms TTL=127
+Reply from 172.16.1.3: bytes=32 time<1ms TTL=127
+Reply from 172.16.1.3: bytes=32 time<1ms TTL=127
+Reply from 172.16.1.3: bytes=32 time<1ms TTL=127
+
+Ping statistics for 172.16.1.3:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\>ping 172.16.1.4
+
+Pinging 172.16.1.4 with 32 bytes of data:
+
+Reply from 172.16.1.4: bytes=32 time<1ms TTL=127
+Reply from 172.16.1.4: bytes=32 time<1ms TTL=127
+Reply from 172.16.1.4: bytes=32 time<1ms TTL=127
+Reply from 172.16.1.4: bytes=32 time<1ms TTL=127
+
+Ping statistics for 172.16.1.4:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\>
+

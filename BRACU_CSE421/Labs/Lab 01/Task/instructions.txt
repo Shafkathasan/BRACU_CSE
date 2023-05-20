@@ -1,0 +1,7 @@
+Class Task
+None.
+
+Home Task
+1. Complete the questions in PDF and do all configurations in pkt file.
+2. Complete the configurations in the PDF. Copy the commands to a doc/text file.
+3. Upload all the files (pdf,text,pkt) compressing in rar/zip/7z . Naming Format of your zip ID_Name_Lab number 

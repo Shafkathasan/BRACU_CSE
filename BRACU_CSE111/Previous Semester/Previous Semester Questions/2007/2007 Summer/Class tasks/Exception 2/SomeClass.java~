@@ -1,0 +1,13 @@
+public class SomeClass{
+  public void badThingsHappen(){
+    int x = 0;
+    int y = 20;
+    SomeClass s = null;
+    
+    System.out.println("Before the bad thing ");
+    //int z = y / x;
+    //s.badThingsHappen();
+    //throw new ClassCastException();
+    //System.out.println("After the bad thing ");    
+  }
+}

@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Pb22
+{
+    public static void main(String[] args) 
+    { 
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Please Enter Triangle Height: ");
+        int size = sc.nextInt();
+        int columnL=1, space=size-1;
+        for(int lineCount=1; lineCount<=size+(size-1); ++lineCount)
+        {
+            for(int columnCount=space; columnCount>=1; --columnCount)
+            {
+                System.out.print(" ");
+            }
+            for(int columnCount=1; columnCount<=columnL; ++columnCount)
+            {
+                if(columnCount==1|| columnCount==(2*lineCount-1)){
+                    System.out.print("*");}
+                else{System.out.print(" ");}
+            }
+            System.out.println();
+            if(lineCount<size){
+                columnL+=2;
+                --space;}
+            else{
+                columnL-=2;
+                ++space;}
+        }
+    }
+}

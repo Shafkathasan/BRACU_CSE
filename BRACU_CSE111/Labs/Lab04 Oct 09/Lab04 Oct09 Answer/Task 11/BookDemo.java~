@@ -1,0 +1,10 @@
+public class BookDemo {
+    public static void main(String[] args) {
+        Book b1 = new Book();
+        bi.setTitle("Developing Java Software");
+        b1.setAuthor("Russel Winderand");
+        b1.setPrice(79.75);
+        
+        System.out.println(b1.toString();
+    }
+}

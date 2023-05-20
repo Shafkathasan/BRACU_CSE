@@ -1,0 +1,11 @@
+abstract class Circle extends Shape {
+    public int i, pie = 3.1416;
+    public double area;
+    public Circle (int _i) {
+        i= _i;
+    }
+    public abstract double getArea() {
+        area = pie*i*i;
+        return area;
+    }
+}

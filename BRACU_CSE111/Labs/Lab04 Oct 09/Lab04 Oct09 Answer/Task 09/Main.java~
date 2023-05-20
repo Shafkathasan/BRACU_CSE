@@ -1,0 +1,40 @@
+public class Main {
+    public static void main (String[] args) {
+        BankAccount acc1 = new BankAccount();
+        BankAccount acc2 = new BankAccount();
+        BankAccount acc3 = new BankAccount();
+        
+        acc1.setName("Steve Jobs");
+        acc1.setAccountID("211542553");
+        acc1.setAddress("Banani");
+        acc1.setBalance(1246.23);
+        
+        acc2.setName("Bill Gates");
+        acc2.setAccountID("211545553");
+        acc2.setAddress("Khulna");
+        acc2.setBalance(62.48);
+        
+        acc3.setName("Albert Newton");
+        acc3.setAccountID("211542559");
+        acc3.setAddress("Paltan");
+        acc3.setBalance(16.00);
+        
+        acc1.addInterest();
+        acc3.addInterest();
+        
+        System.out.println("Name:\t" + acc1.getName());
+        System.out.println("ID:\t" + acc1.getAccountID());
+        System.out.println("Address:\t" + acc1.getAddress());
+        System.out.println("Balance:\t" + acc1.getBalance());
+        System.out.println();
+        System.out.println("Name:\t" + acc2.getName());
+        System.out.println("ID:\t" + acc2.getAccountID());
+        System.out.println("Address:\t" + acc2.getAddress());
+        System.out.println("Balance:\t" + acc2.getBalance());
+        System.out.println();
+        System.out.println("Name:\t" + acc3.getName());
+        System.out.println("ID:\t" + acc3.getAccountID());
+        System.out.println("Address:\t" + acc3.getAddress());
+        System.out.println("Balance:\t" + acc3.getBalance());
+    }
+}

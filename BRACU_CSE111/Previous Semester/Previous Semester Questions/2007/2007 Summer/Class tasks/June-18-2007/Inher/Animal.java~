@@ -1,0 +1,15 @@
+public class Animal{
+  protected String sound = "Animal Sound";
+  public Animal(){
+    System.out.println("In Animal const");
+  }
+  public Animal(int width){
+    System.out.println("In Animal const");
+  }
+  public void setSound(String sound){
+    this.sound = sound;
+  }
+  public String makeSound(){
+    return sound;
+  }
+}

@@ -1,0 +1,10 @@
+public class TestException{
+  public static doSomething(){
+    System.out.println("In do something");
+  }
+  public static void main(String [] args){
+    System.out.println("Before doSomething()");
+    doSomething();
+    System.out.println("After doSomething()");
+  }
+}

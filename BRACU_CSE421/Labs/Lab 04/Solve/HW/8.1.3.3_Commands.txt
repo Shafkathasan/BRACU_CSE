@@ -1,0 +1,48 @@
+R1
+
+R1>en
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#int g0/0
+R1(config-if)#p helper-ad
+R1(config-if)#p helper-address 192.168.60.253
+% Ambiguous command: "p helper-address 192.168.60.253"
+R1(config-if)#ip helper-address 192.168.60.253
+R1(config-if)#no shut down
+R1(config-if)#exit
+R1(config)#
+R1#
+
+
+PC1
+
+Cisco Packet Tracer PC Command Line 1.0
+C:\>ping cisco.com
+
+Pinging 209.165.202.158 with 32 bytes of data:
+
+Reply from 209.165.202.158: bytes=32 time=1ms TTL=125
+Reply from 209.165.202.158: bytes=32 time=9ms TTL=125
+Reply from 209.165.202.158: bytes=32 time=13ms TTL=125
+Reply from 209.165.202.158: bytes=32 time=11ms TTL=125
+
+Ping statistics for 209.165.202.158:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 13ms, Average = 8ms
+
+C:\>ping  publicsite.com
+
+Pinging 209.165.202.157 with 32 bytes of data:
+
+Reply from 209.165.202.157: bytes=32 time=1ms TTL=125
+Reply from 209.165.202.157: bytes=32 time=10ms TTL=125
+Reply from 209.165.202.157: bytes=32 time=5ms TTL=125
+Reply from 209.165.202.157: bytes=32 time=4ms TTL=125
+
+Ping statistics for 209.165.202.157:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 10ms, Average = 5ms
+
+C:\>

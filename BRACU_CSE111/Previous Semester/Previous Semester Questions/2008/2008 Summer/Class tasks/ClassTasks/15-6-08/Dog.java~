@@ -1,0 +1,9 @@
+public class Dog extends Animal{
+  public String sound = "Bark";
+  public String makeSound(){
+    return sound;
+  }
+  public String rollOver(){
+    return "rolling over";
+  }
+}

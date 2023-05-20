@@ -1,0 +1,65 @@
+;This file was created by Graph (http://www.padowan.dk)
+;Do not change this file from other programs.
+[Graph]
+Version = 4.4.2.543
+MinVersion = 2.5
+OS = Windows NT 6.2 
+
+[Axes]
+xMin = -0.00516894457099469
+xMax = 0.111497722095672
+xTickUnit = 0.005
+xGridUnit = 0.005
+xShowGrid = 1
+xLabel = Distance
+yMin = -205.409816952314
+yMax = 4905.7012941588
+yTickUnit = 500
+yGridUnit = 500
+yShowGrid = 1
+yLabel = Electrostatic Force
+AxesColor = clBlue
+GridColor = 0x00FF9999
+ShowLegend = 1
+Radian = 1
+
+[PointSeries1]
+FillColor = clRed
+LineColor = clBlue
+Size = 5
+Style = 0
+LineSize = 5
+LineStyle = 0
+ShowLabels = 1
+LabelPosition = 5
+PointCount = 10
+Points = 0.014,4585.485;0.02,2246.888;0.03,998.617;0.04,561.722;0.05,359.502;0.06,249.654;0.07,183.419;0.08,140.43;0.09,110.957;0.1,89.876;
+LegendText = Table 1
+
+[PointSeries2]
+FillColor = clRed
+LineColor = clYellow
+Size = 5
+Style = 0
+LineSize = 5
+LineStyle = 0
+LabelPosition = 1
+PointCount = 10
+Points = 0.014,45.855;0.02,22.469;0.03,9.986;0.04,5.617;0.05,3.595;0.06,2.497;0.07,1.834;0.08,1.404;0.09,1.11;0.1,0.899;
+LegendText = Table 2
+
+[Label1]
+Placement = 0
+Pos = 0.0616416729941787;4768.92182581323
+Text = {\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 Times New Roman;}{\\f1\\fnil Times New Roman;}}\n{\\colortbl ;\\red0\\green0\\blue0;}\n\\viewkind4\\uc1\\pard\\cf1\\b\\f0\\fs32 ID: 19101077\\b0\\f1\\fs24\\par\n}\n
+BackgroundColor = clNone
+ShowInLegend = 0
+
+[Data]
+TextLabelCount = 1
+FuncCount = 0
+PointSeriesCount = 2
+ShadeCount = 0
+RelationCount = 0
+OleObjectCount = 0
+

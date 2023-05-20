@@ -1,0 +1,13 @@
+abstract public class Animal{
+  protected String sound = "Animal Sound";
+  public int age;
+  public Animal(){
+    System.out.println("In Animal default const");
+  }
+  abstract public String makeSound();//{
+  //  return sound;
+  //}
+  public void getAge(){
+    System.out.println("In Animal's getAge");
+  }
+}

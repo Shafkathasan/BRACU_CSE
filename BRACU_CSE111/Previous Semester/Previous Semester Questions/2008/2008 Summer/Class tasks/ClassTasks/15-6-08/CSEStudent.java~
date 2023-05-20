@@ -1,0 +1,7 @@
+public class CSEStudent extends Student{
+  public CSEStudent(String _name, String _id){
+    name = _name;
+    id = _id;
+  }
+  
+}

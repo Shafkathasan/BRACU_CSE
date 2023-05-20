@@ -1,0 +1,15 @@
+public class Main {
+    public static void main (String[] args) {
+        circle c1 = new circle();
+        circle c2 = new circle(5.0);
+        
+        System.out.println("Circle 1");
+        System.out.println("Radius: " + c1.getRadius());
+        System.out.println("Area: " + c1.getArea());
+        System.out.println();
+        System.out.println("Circle 2");
+        System.out.println("Radius: " + c2.getRadius());
+        System.out.println("Area: " + c2.getArea());
+        
+    }
+}

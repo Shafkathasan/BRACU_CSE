@@ -1,0 +1,92 @@
+PC-01:
+
+Packet Tracer PC Command Line 1.0
+C:\>ipconfig
+
+C:\>ipconfig
+
+C:\>ping 172.16.1.1
+
+C:\>ping 209.165.201.2
+
+C:\>ping 172.16.1.4
+
+C:\>ping 172.16.2.3
+
+C:\>ping 172.16.2.4
+
+C:\>ssh
+
+C:\>ssh -l Admin01 172.16.1.1
+
+R1#show ip interface brief
+R1#configure terminal
+R1(config)#interface g0/1
+R1(config-if)#ip address 172.16.2.1 255.255.255.0
+R1(config-if)#
+R1(config-if)#no shutdown
+R1(config-if)#exit
+R1(config)#exit
+R1#show ip interface brief
+R1#
+C:\>ipconfig /all
+
+
+PC-02:
+
+Packet Tracer PC Command Line 1.0
+C:\>ipconfig
+
+C:\>ipconfig
+
+C:\>ping 172.16.1.1
+
+C:\>ping 209.165.201.2
+
+C:\>ping 172.16.1.3
+
+C:\>ping 172.16.2.3
+
+C:\>ping 172.16.2.4
+
+C:\>ipconfig /all
+
+
+
+PC-A:
+Packet Tracer PC Command Line 1.0
+C:\>ipconfig
+
+C:\>ping 209.165.201.2
+
+C:\>ping 172.16.2.1
+
+C:\>ping 172.16.2.4
+
+C:\>ping 172.16.1.3
+
+C:\>ping 172.16.1.4
+
+C:\>ipconfig /all
+
+
+PC-B:
+Packet Tracer PC Command Line 1.0
+C:\>ipconfig
+
+C:\>ping 209.165.201.2
+
+C:\>ping 172.16.2.1
+
+C:\>ping 172.16.2.3
+
+C:\>ping 172.16.1.3
+
+C:\>ping 172.16.1.4
+
+C:\>ipconfig /all
+
+
+
+
+

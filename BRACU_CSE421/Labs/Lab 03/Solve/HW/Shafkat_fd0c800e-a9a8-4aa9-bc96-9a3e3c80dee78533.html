@@ -1,0 +1,94 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> <meta charset="utf-8">  
+<title> </title> 
+<style>  
+  *{margin: 0;padding: 0;}   
+  .main{width: 900px;margin: auto;}   
+  .topic{margin: 20px 0;box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);border-radius: 6px;}    
+  .t1 {padding: 10px;}    
+  .topic img{   
+       max-width: 100%;  
+    }  
+  .pbImageToTextHint{display: none;}  
+  .t2 li{list-style: none;border: 1px solid #ccc;}  
+   .answer-given-body p img{  
+            width: auto !important;height: auto!important;max-width: 100% !important;  
+    }  
+    .hidden {visibility:hidden; }    
+  </style>  
+</head>  
+<body>  
+<div class="main">    <h2> Question:<span class="title"></span></h2>    <div class="topic t1">        <div class="pbImages"><img src="" />        </div>    </div>    <div class="topic t2"><html><body><div><p><strong>PYTHON CODE WITH COMMENTS:-</strong></p>  <p><u><strong>server.py</strong></u></p>  <pre> <code># import socket module
+  import socket
+  # define server_program() function
+  def server_program():
+     # get the hostname
+     host = socket.gethostname()
+      # initiate port number
+     port = 5000
+        # get instance
+     server_socket = socket.socket()
+       # bind host address and port together using tuple
+      server_socket.bind((host, port))
+        # configure how many client the server can listen simultaneously
+     server_socket.listen(2)
+     # accept new connection
+     conn, address = server_socket.accept()
+       print("Connection from: " + str(address))
+       # infinite while loop
+      while True:
+         # receive data stream. it won't accept data packet greater than 1024 bytes
+         data = conn.recv(1024).decode()
+         if not data:
+             # if data is not received break
+             break
+          # print hourse reveived from client
+          print("hours received: " + str(data) + " Hrs")
+         print("Sending payable amount...")
+         # convert string hours into int datatype
+          data = int(data)
+         pay = 0
+                  # if else condition for hours less than 40 or not
+          if (data&lt;=40):
+              pay = data * 200
+         elif (data&gt; 40):
+              pay = ((data - 40) * 300) + 8000
+          # store amount into data variable
+          data = str(float(pay)) + " TK"
+         # send data to client
+          conn.send(data.encode())
+          # close the connection
+     conn.close()
+      if __name__ == '__main__':
+     server_program()</code></pre>  <p><u><strong>client.py</strong></u></p>  <pre> <code># import socket module
+  import socket
+  # define client_program() function
+  def client_program():
+      # as both code is running on same pc
+     host = socket.gethostname()
+      # socket server port number
+     port = 5000
+        # instantiate
+     client_socket = socket.socket()
+       # connect to the server
+     client_socket.connect((host, port))
+        # take input from user
+      message = input("Enter amount of hours person works:
+  ")
+        # while loop until user not enter bye
+      while message.lower().strip() != 'bye':
+         # send message
+  to server
+          client_socket.send(message.encode())
+           # receive response from server
+          data = client_socket.recv(1024).decode()
+    t# dislay messange on client terminal
+          print('Payable amount: ' + data)
+          # again take input
+         message = input("Enter amount of hours person works:
+  ")
+        # close the connection
+     client_socket.close()
+     if __name__ == '__main__':
+     client_program()</code></pre>  <p>Put both files into the same folder.</p>  <p>First, run server.py and then run client.py&#160;</p>  <p><u><strong>OUTPUT:-</strong></u></p>  <p><img src="https://studyspaceunlock.oss-ap-southeast-1.aliyuncs.com/7d95a2/7/7cf81cd7ee579b568803a01c12b7d90e.jpg"></p>  <p><img src="https://studyspaceunlock.oss-ap-southeast-1.aliyuncs.com/7d95a2/0/0bf3facd323d4872cc1255e1d9cc6a35.jpg"></p>  <p><u><strong>Enter bye in client terminal to exit() from running code.</strong></u></p>  <p><img src="https://studyspaceunlock.oss-ap-southeast-1.aliyuncs.com/7d95a2/3/363505aac6bc181a36132bf7c24911e4.jpg"></p>  <p><u><strong><span>PLEASE UPVOTE AND FEEL FREE TO ASK ANY DOUBT IN THE COMMENT SECTION.</span></strong></u></p>  <p>&#160;</p>  <p>&#160;</p> </div></body></html></div></div></html>

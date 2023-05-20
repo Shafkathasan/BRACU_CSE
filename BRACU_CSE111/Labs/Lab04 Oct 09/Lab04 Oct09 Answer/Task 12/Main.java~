@@ -1,0 +1,7 @@
+public class Main {
+    public static void main (String[] args) {
+        Author auth1 = new Author("Mike", "Tyson");
+        
+        System.out.println(auth1.toString());
+    }
+}

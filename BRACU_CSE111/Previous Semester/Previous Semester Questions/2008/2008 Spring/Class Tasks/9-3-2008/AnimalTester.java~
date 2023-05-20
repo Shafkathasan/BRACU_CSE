@@ -1,0 +1,13 @@
+public class AnimalTester{
+  public static void printSound(Animal a){    
+      a.makeSound();
+  }
+  public static void main(String [] args){
+    Cat c = new Cat();
+    printSound(c);
+    Dog s = new Dog();
+    printSound(s);
+    Cow c1 = new Cow();
+    printSound(c1);
+  }
+}

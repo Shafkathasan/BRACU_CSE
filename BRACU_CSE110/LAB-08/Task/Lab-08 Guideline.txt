@@ -1,0 +1,46 @@
+In this lab, you will learn loop better through lots of exercise.
+
+Step 1) Read Task1 and Task3 question from Lab.pdf
+Step 2) Read FOUR files: Task01, Task03 example with while/for loop
+Step 3) Read TWO files: Example of Analysis files.
+Step 4) Then read rest of this file.
+
+Please start early so that you can complete all the tasks on or before the lab day.
+It is fine to use either while-loop or for-loop to solve these problems.
+
+Please use meaningful variable names, examples:
+
+lineCount  //a counter for running the loop for printing different lines/rows 
+linesQuantity // to mean how many lines/rows to be printed 
+starCount // a counter for running the loop for printing stars in same line 
+starsQuantity // number of stars to be printed 
+columnCount // a counter for running the loop for printing numbers in same line 
+columnsQuantity // total number of numbers to be printed 
+spaceCount // a counter for running the loop for printing spaces in same line 
+spaceQuantity // total number of spaces to be printed 
+ 
+
+pseudo-code for some of the problems:
+lineQuantity = sc.nextInt();
+lineCount=1; 
+while (lineCount<=lineQuantity) 
+{
+    //calculate how many spaces as f(lines), function of lines/lineCount/etc
+    spaces=______ ;  
+    spaceCount=1;
+    while (.....) // loop for printing "spaces" number of spaces
+    {
+        System.out.print(' ');
+    }
+ 
+    //calculate how many stars as f(lines), function of lines/lineCount/etc
+    stars = _______;  
+    starCount=1;
+    while( .....) // loop for printing "stars" number of stars
+    {
+        System.out.print('*');
+    }
+
+    System.out.println();//print enter, or System.out.print('\n');
+    ++lineCount;
+}

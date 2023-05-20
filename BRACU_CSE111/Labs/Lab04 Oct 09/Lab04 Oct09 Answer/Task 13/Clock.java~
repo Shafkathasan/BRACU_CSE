@@ -1,0 +1,97 @@
+class Clock {
+    private int hours, minutes, seconds;
+    
+    void setClock(int seconds) {
+        seconds %= 86399;
+        setHours(seconds / 3600);
+        setMinutes(seconds % 3600 / 60);
+        setSeconds(seconds % 3600 % 60);
+    }
+    
+    int getHours() {
+        return hours;
+    }
+    
+    int getMinutes() {
+        return minutes;
+    }
+    
+    int getSeconds() {
+        return seconds;
+    }
+    
+    void setHours(int hour) {
+        hours = hour % 23;
+    }
+    
+    void setMinutes(int min) {
+        if (min > 59) {
+            setHours(hours + min / 60);
+        }
+        minutes = min % 60;
+    }
+    
+    void setSeconds(int sec) {
+        if (sec > 59) {
+            setMinutes(minutes + sec / 60);
+        }
+        seconds = sec % 60;
+    }
+    
+    void tick() {
+        int totalSeconds = hours * 3600 + minutes * 60 + seconds;
+        totalSeconds ++;
+        setClock(totalSeconds);
+    }
+    
+    Clock addClock(Clock c) {
+        int totalSecondsOfC = c.hours * 3600 + c.minutes * 60 + c.seconds;
+        int totalSeconds = hours * 3600 + minutes * 60 + seconds;
+        
+        int resultedSeconds = totalSecondsOfC + totalSeconds;
+        
+        Clock newClock = new Clock();
+        newClock.setClock(resultedSeconds);
+        
+        return newClock;
+        
+    }
+    
+    public String toString() {
+        return (hours < 10 ? "0" : "") + hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+    }
+    
+    void tickDown() {
+        int totalSeconds = hours * 3600 + minutes * 60 + seconds;
+        totalSeconds --;
+        setClock(totalSeconds);
+    }
+    
+    Clock subtractClock(Clock c) {
+        int totalSecondsOfC = c.hours * 3600 + c.minutes * 60 + c.seconds;
+        int totalSeconds = hours * 3600 + minutes * 60 + seconds;
+        
+        int resultedSeconds = Math.abs(totalSecondsOfC - totalSeconds);
+        
+        Clock newClock = new Clock();
+        newClock.setClock(resultedSeconds);
+        
+        return newClock;
+    }
+    
+    Clock () {
+        hours = 12;
+        minutes = 0;
+        seconds = 0;
+    }
+    
+    Clock (int seconds) {
+        setClock(seconds);
+    }
+    
+    Clock (int hrs, int mins, int sec) {
+        setHours(hrs);
+        setMinutes(mins);
+        setSeconds(sec);
+    }
+}

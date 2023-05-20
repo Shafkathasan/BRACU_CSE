@@ -1,0 +1,7 @@
+public class BBAStudent{
+  String name;
+  String dpt;
+  public double cgpa(){
+    return 4.0;
+  }
+}

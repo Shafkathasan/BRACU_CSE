@@ -1,0 +1,10 @@
+public class Task09{
+    String name, accountID, address;
+    double balance;
+    public String getName(){
+        retune name;
+    }
+    public String setName(){
+        name=n;
+    }
+}

@@ -1,0 +1,38 @@
+public class Q1 {
+    public static void main(String[] args) {
+        Shape circle = new Circle (2);
+        Shape rectangle = new Rectangle (5, 7);
+        
+        System.out.println("Area of the circle:"+circle.getArea());
+        System.out.println("Area of the rectangle:"+rectangle.getArea());
+    }
+}
+
+abstract class Shape {
+    abstract double getArea();
+}
+
+class Circle extends Shape {
+    public int i, pie = 3.1416;
+    public double area;
+    public Circle (int _i) {
+        i= _i;
+    }
+    public abstract double getArea() {
+        area = pie*i*i;
+        return area;
+    }
+}
+
+class Rectangle extends Shape {
+    public int x, y;
+    public double area;
+    public Circle (int _x, int _y) {
+        x =_x;
+        y =_y;
+    }
+    public abstract double getArea() {
+        area = x*y;
+        return area;
+    }
+}

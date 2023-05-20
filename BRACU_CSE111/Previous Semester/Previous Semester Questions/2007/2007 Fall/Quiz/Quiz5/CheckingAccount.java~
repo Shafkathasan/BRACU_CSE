@@ -1,0 +1,18 @@
+public class CheckingAccount extends Account{
+  public CheckingAccount(String name){
+    super(name);    
+  }
+  public String deposit(double amount){
+    if (ammout > 0){
+      setBalance(getBalance()+ amount);
+      return "Deposit Sucessful";
+    }
+    return "Please enter amount greater than Zero";
+  }
+  public void withdraw(double amount){
+    if (ammout > 0){
+      setBalance(getBalance()+ amount);
+    }
+  }
+  
+}

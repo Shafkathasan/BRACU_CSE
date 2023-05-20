@@ -1,0 +1,507 @@
+System Bootstrap, Version 12.3(8r)T8, RELEASE SOFTWARE (fc1)
+Cisco 1841 (revision 5.0) with 114688K/16384K bytes of memory.
+
+Readonly ROMMON initialized
+
+Self decompressing the image :
+######################### [OK]
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, 1841 Software (C1841-IPBASE-M), Version 12.3(14)T7, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2006 by Cisco Systems, Inc.
+Compiled Mon 15-May-06 14:54 by pt_team
+Image text-base: 0x6007D180, data-base: 0x61400000
+
+Port Statistics for unclassified packets is not turned on.
+Cisco 1841 (revision 5.0) with 114688K/16384K bytes of memory.
+Processor board ID FTX0947Z18E
+M860 processor: part number 0, mask 49
+2 FastEthernet/IEEE 802.3 interface(s)
+2 Low-speed serial(sync/async) network interface(s)
+191K bytes of NVRAM.
+32768K bytes of ATA CompactFlash (Read/Write)
+Cisco IOS Software, 1841 Software (C1841-IPBASE-M), Version 12.3(14)T7, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2006 by Cisco Systems, Inc.
+Compiled Mon 15-May-06 14:54 by pt_team
+
+Press RETURN to get started!
+
+
+
+Router>en
+Router#erase startup-conf
+Erasing the nvram filesystem will remove all configuration files! Continue? [confirm]y[OK]
+Erase of nvram: complete
+%SYS-7-NV_BLOCK_INIT: Initialized the geometry of nvram
+Router#reload
+Proceed with reload? [confirm]
+System Bootstrap, Version 12.3(8r)T8, RELEASE SOFTWARE (fc1)
+Initializing memory for ECC
+..
+C1841 processor with 524288 Kbytes of main memory
+Main memory is configured to 64 bit mode with ECC enabled
+
+Readonly ROMMON initialized
+
+Self decompressing the image :
+########################################################################## [OK]
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, 1841 Software (C1841-IPBASE-M), Version 12.3(14)T7, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2006 by Cisco Systems, Inc.
+Compiled Mon 15-May-06 14:54 by pt_team
+Image text-base: 0x6007D180, data-base: 0x61400000
+
+Port Statistics for unclassified packets is not turned on.
+Cisco 1841 (revision 5.0) with 114688K/16384K bytes of memory.
+Processor board ID FTX0947Z18E
+M860 processor: part number 0, mask 49
+2 FastEthernet/IEEE 802.3 interface(s)
+2 Low-speed serial(sync/async) network interface(s)
+191K bytes of NVRAM.
+32768K bytes of ATA CompactFlash (Read/Write)
+Cisco IOS Software, 1841 Software (C1841-IPBASE-M), Version 12.3(14)T7, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2006 by Cisco Systems, Inc.
+Compiled Mon 15-May-06 14:54 by pt_team
+
+
+         --- System Configuration Dialog ---
+
+Would you like to enter the initial configuration dialog? [yes/no]: no
+
+
+Press RETURN to get started!
+
+
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname myR
+myR(config)#no hostname
+Router(config)#hostname R1
+R1(config)#no ip d?
+default-gateway  default-network  dhcp  domain  domain-lookup  domain-name  
+R1(config)#no ip domain-lookup
+R1(config)#enable password CSE421
+R1(config)#end
+R1#
+%SYS-5-CONFIG_I: Configured from console by console
+
+R1#exit
+
+
+
+
+R1 con0 is now available
+
+
+
+
+Press RETURN to get started.
+
+
+
+R1>show run
+        ^
+% Invalid input detected at '^' marker.
+	
+R1>en
+Password: 
+R1#show run
+Building configuration...
+
+Current configuration : 735 bytes
+!
+version 12.3
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R1
+!
+!
+!
+enable password CSE421
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+no ip domain-lookup
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/0/0
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial0/0/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+R1#
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#enable secret class
+R1(config)#exit
+R1#
+%SYS-5-CONFIG_I: Configured from console by console
+
+R1#show run
+Building configuration...
+
+Current configuration : 782 bytes
+!
+version 12.3
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R1
+!
+!
+!
+enable secret 5 $1$mERr$9cTjUIEqNGurQiFU.ZeCi1
+enable password CSE421
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+no ip domain-lookup
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/0/0
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial0/0/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+R1#
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#banner motd &
+Enter TEXT message.  End with the character '&'.
+******************************** 
+ !!!AUTHORIZED ACCESS ONLY!!! 
+******************************** 
+& 
+
+R1(config)#line console 0
+R1(config-line)#password cisco
+R1(config-line)#login
+R1(config-line)#exit
+R1(config)#line vty 0 4
+R1(config-line)#password cisco
+R1(config-line)#login
+R1(config-line)#exit
+R1(config)#service p
+R1(config)#service password-encryption 
+R1(config)#exit
+R1#
+%SYS-5-CONFIG_I: Configured from console by console
+
+R1#exit
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+******************************** 
+ !!!AUTHORIZED ACCESS ONLY!!! 
+******************************** 
+
+
+User Access Verification
+
+Password: 
+
+R1>en
+Password: 
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#int f0/0
+R1(config-if)#ip add 192.168.1.1 255.255.255.0
+R1(config-if)#no shut
+
+R1(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+R1(config-if)#exit
+R1(config)#int s0/0/0
+R1(config-if)#ip add 192.168.2.1 255.255.255.0
+R1(config-if)#clock rate 64000
+R1(config-if)#no shutdown
+
+%LINK-5-CHANGED: Interface Serial0/0/0, changed state to down
+R1(config-if)#exit
+R1(config)#end
+R1#
+%SYS-5-CONFIG_I: Configured from console by console
+
+R1#copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+R1#
+R1#show running-conf
+Building configuration...
+
+Current configuration : 985 bytes
+!
+version 12.3
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname R1
+!
+!
+!
+enable secret 5 $1$mERr$9cTjUIEqNGurQiFU.ZeCi1
+enable password 7 08027F6B5D4B54
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+no ip domain-lookup
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 192.168.1.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/0/0
+ ip address 192.168.2.1 255.255.255.0
+ clock rate 64000
+!
+interface Serial0/0/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+banner motd ^C
+******************************** 
+ !!!AUTHORIZED ACCESS ONLY!!! 
+******************************** 
+^C
+!
+!
+!
+!
+!
+line con 0
+ password 7 0822455D0A16
+ login
+!
+line aux 0
+!
+line vty 0 4
+ password 7 0822455D0A16
+ login
+!
+!
+!
+end
+
+R1#end
+Translating "end"
+% Unknown command or computer name, or unable to find computer address
+
+R1#exit
+
+
+******************************** 
+ !!!AUTHORIZED ACCESS ONLY!!! 
+******************************** 
+
+
+User Access Verification
+
+Password: 
+
+R1>en
+Password: 
+R1#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol 
+FastEthernet0/0        192.168.1.1     YES manual up                    up 
+FastEthernet0/1        unassigned      YES NVRAM  administratively down down 
+Serial0/0/0            192.168.2.1     YES manual up                    up 
+Serial0/0/1            unassigned      YES NVRAM  administratively down down 
+Vlan1                  unassigned      YES unset  administratively down down
+R1#exit

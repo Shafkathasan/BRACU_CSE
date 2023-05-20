@@ -1,0 +1,82 @@
+
+R2:
+
+R2>enable
+R2#conf t
+R2(config)#ip dhcp ex
+R2(config)#ip dhcp excluded-address ?
+R2(config)#ip dhcp excluded-address 192.168.10.1 ?
+R2(config)#ip dhcp ex
+R2(config)#ip dhcp excluded-address 192.168.10.1 192.168.10.10
+R2(config)#ip dhcp excluded-address 192.168.30.1 192.168.30.10
+R2(config)#ip dhcp pool R1-LAN
+R2(dhcp-config)#net
+R2(dhcp-config)#network ?
+R2(dhcp-config)#network 192.168.10.0 255.255.255.0
+R2(dhcp-config)#def
+R2(dhcp-config)#default-router 192.168.10.1
+R2(dhcp-config)#dns
+R2(dhcp-config)#dns-server 192.168.20.254
+R2(dhcp-config)#exit
+R2(config)#ip dhcp pool R3-LAN
+R2(dhcp-config)#network 192.168.30.0 255.255.255.0
+R2(dhcp-config)#def
+R2(dhcp-config)#default-router 192.168.30.1
+R2(dhcp-config)#dns
+R2(dhcp-config)#dns-server 192.168.20.254
+R2(dhcp-config)#
+R2(dhcp-config)#
+R2(dhcp-config)#
+R2(dhcp-config)#exit
+R2(config)#int
+R2(config)#interface gig
+R2(config)#interface gigabitEthernet 0/1
+R2(config-if)#ip add
+R2(config-if)#ip address dhcp
+R2(config-if)#no shutdown
+R2(config-if)#
+R2(config-if)#
+R2(config-if)#exit
+R2(config)#exit
+R2#
+R2#show ip interface brief
+R2#
+
+
+R1:
+R1>enable
+R1#conf t
+R1(config)#int
+R1(config)#interface gig
+R1(config)#interface gigabitEthernet 0/0
+R1(config-if)#ip help
+R1(config-if)#ip helper-address 10.1.1.2
+R1(config-if)#
+
+
+R3:
+R1>enable
+R1#conf t
+R1(config)#int
+R1(config)#interface gig
+R1(config)#interface gigabitEthernet 0/0
+R1(config-if)#ip help
+R1(config-if)#ip helper-address 10.2.2.2
+R1(config-if)#
+
+PC2:
+Packet Tracer PC Command Line 1.0
+C:\>ping 192.168.10.11
+C:\>
+
+PC1:
+Packet Tracer PC Command Line 1.0
+C:\>ipconfig all/
+Invalid Command.
+
+C:\>ipconfig all
+Invalid Command.
+
+C:\>ping 209.165.202.158
+C:\>
+

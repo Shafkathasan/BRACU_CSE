@@ -1,0 +1,6 @@
+public class StudentTester{
+  public static void main(String [] s){
+    Student s1 = new Student();
+    s1.printName();
+  }
+}

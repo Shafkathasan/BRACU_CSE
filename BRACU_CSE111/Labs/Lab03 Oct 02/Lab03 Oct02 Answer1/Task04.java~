@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Task04 {
+    public static void main(String[]args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please Input a String");
+        String s = sc.nextLine();
+        int[] array = new int[26];
+        int i, n, p;
+        for(i=0; i<=s.length()-1; i++) {
+            char ch = s.charAt(i);
+            int code = (int)ch;
+            p = code-65;
+            array[p]++;
+        }
+        for(i=0; i<=s.length()-1; i++) {
+            int n = i+65;
+            System.out.println((char)n+" which is "+n+"was found "+array[i]+" times");
+        }
+    }
+}

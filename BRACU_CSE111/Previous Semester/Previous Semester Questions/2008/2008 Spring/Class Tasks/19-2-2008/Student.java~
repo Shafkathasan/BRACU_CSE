@@ -1,0 +1,10 @@
+public class Student{
+  String name;
+  Animal pet;
+  public Student(){
+    name = "default";
+    pet = new Animal();
+    pet.name = "cat";
+    pet.sound = "meow";
+  }
+}

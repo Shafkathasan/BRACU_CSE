@@ -1,0 +1,6 @@
+public class Bike extends Animal{ 
+  public String sound = "Vavooooom";
+  public String makeSound(){
+    return sound;
+  }
+}

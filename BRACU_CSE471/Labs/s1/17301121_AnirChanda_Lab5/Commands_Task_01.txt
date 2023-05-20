@@ -1,0 +1,24 @@
+﻿For part 1:
+C. ping 172.31.0.254
+Part 2 
+C. configuring R1: R1>en
+R1#conf t
+R1(config)#ip route 172.31.0.0 255.255.255.0 172.31.1.193
+R1(config)ip route 172.31.1.196 255.255.255.252 172.31.1.193
+R1(config)ip route 172.31.1.128 255.255.255.192 172.31.1.193
+D. ping 172.31.0.254
+R2>en
+R2#conf t
+R2(config)#ip route 172.31.1.0 255.255.255.128 s0/0/0 
+Ping 172.31.0.254
+Step 2 configure R2 
+R2>en
+R2#conf t
+R2(config)#ip route 172.31.1.0 255.255.255.128 S0/0/0
+R2(config)#ip route 172.31.1.128 255.255.255.192 S0/0/1
+Step 3: configure R3
+R3>en
+R3> conf t
+R3(config)#ip route 0.0.0.0 0.0.0.0 s0/0/1
+R3(config)# exit
+R3(config)#show ip route

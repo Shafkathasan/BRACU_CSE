@@ -1,0 +1,19 @@
+public class AnimalTester{
+  public static void printSound(Animal a){
+      System.out.println(a.makeSound());       
+  }
+  
+  public static void main(String [] args){
+    
+    //Animal a = new Animal();
+    
+    RedDog d = new RedDog();
+    Cat c = new Cat();
+    Cow co = new Cow();
+    Pig p = new Pig();
+    printSound(c);
+    printSound(d);
+    printSound(co);
+    printSound(p);
+  }
+}

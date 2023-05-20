@@ -1,0 +1,44 @@
+import static java.lang.System.*;
+import java.util.Scanner;
+
+public class ClockDemo {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner (System.in);
+        
+        System.out.println("Please enter the midnight in seconds");
+        int midNightSecs = sc.nextInt();
+        
+        Clock firstClock = new Clock(midNightSecs);
+        
+        for (int i = 1; i <= 10; i ++) {
+            firstClock.tick();
+            System.out.println(firstClock.toString());
+        }
+        
+        out.println();
+        
+        System.out.println("Please enter the hours value");
+        int hrs = sc.nextInt();
+        System.out.println("Please enter the minutes value");
+        int mins = sc.nextInt();
+        System.out.println("Pleae enter the seconds value");
+        int secs = sc.nextInt();
+        Clock secondClock = new Clock(hrs, mins, secs);
+        
+        for (int i = 1; i <= 10; i ++) {
+            secondClock.tick();
+            System.out.println(secondClock.toString());
+        }
+        
+        out.println();
+        
+        firstClock = firstClock.addClock(secondClock);
+        
+        System.out.println(firstClock.toString());
+        System.out.println(secondClock.toString());
+        
+        Clock thirdClock = firstClock.subtractClock(secondClock);
+        
+        System.out.println(thirdClock.toString());
+    }
+}

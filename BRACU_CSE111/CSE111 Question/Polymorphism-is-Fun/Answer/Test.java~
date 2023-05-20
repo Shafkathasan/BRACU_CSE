@@ -1,0 +1,14 @@
+public class Test {
+    public static void main (String[] args) {
+        
+        Quadrilateral shape1 = new Quadrilateral(); 
+        Object shape2 = new Kite(); 
+        Quadrilateral shape3 = new Trapezium(); 
+        Object shape4 = new Parallelogram();
+        Parallelogram shape5 = new Rhombus(); 
+        Quadrilateral shape6 = new Rectangle();
+        Parallelogram shape7 = new Square(); 
+        Rectangle shape8 = new Square();
+        
+    }
+}

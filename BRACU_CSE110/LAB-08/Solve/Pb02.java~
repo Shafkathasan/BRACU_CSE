@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class Pb02
+{
+    public static void main(String[] args) 
+    { 
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Please Enter Quantity of Stars: ");
+        int starNum = sc.nextInt();
+        for (int starCount=1; starCount<=starNum; ++starCount){
+            System.out.print("*");}
+        System.out.println();
+    }
+}

@@ -1,0 +1,119 @@
+R1
+
+R1>en
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#int g00
+                  ^
+% Invalid input detected at '^' marker.
+	
+R1(config)#int g0/0
+R1(config-if)#ip help
+R1(config-if)#ip helper-address 10.1.1.2
+R1(config-if)#exit
+R1(config)#
+
+
+R2
+
+
+R2>en
+R2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#ip dhcp exc
+R2(config)#ip dhcp excluded-address 192.168.10.1 192.168.10.10
+R2(config)#ip dhcp excluded-address 192.168.30.1 192.168.30.10
+R2(config)#ip dhcp pool R1-LAN
+R2(dhcp-config)#network 192.168.10.0 255.255.255.0
+R2(dhcp-config)#deful
+R2(dhcp-config)#default-
+R2(dhcp-config)#default-router 192.168.10.1
+R2(dhcp-config)#dns-s
+R2(dhcp-config)#dns-server 192.168.20.254
+R2(dhcp-config)#exit
+R2(config)#ip dhcp pool R3-LAN
+R2(dhcp-config)#network 192.168.30.0 255.255.255.0
+R2(dhcp-config)#default-router 192.168.30.1
+R2(dhcp-config)#dns-server 192.168.20.254
+R2(dhcp-config)#exit
+R2(config)#int g0/1
+R2(config-if)#ip address dhcp
+R2(config-if)#no shut down
+
+R2(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+R2(config-if)#
+%DHCP-6-ADDRESS_ASSIGN: Interface GigabitEthernet0/1 assigned DHCP address 209.165.200.231, mask 255.255.255.224, hostname R2
+
+
+%DUAL-5-NBRCHANGE: IP-EIGRP 1: Neighbor 209.165.200.225 (GigabitEthernet0/1) is up: new adjacency
+
+R2(config-if)#exit
+R2(config)#exit
+R2#
+%SYS-5-CONFIG_I: Configured from console by console
+
+R2#show ip dhcp binding
+IP address       Client-ID/              Lease expiration        Type
+                 Hardware address
+192.168.10.11    0002.4AA5.1470           --                     Automatic
+192.168.30.11    0004.9A97.2535           --                     Automatic
+R2#
+
+
+R3
+
+
+R3>en
+R3#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R3(config)#int g0/0
+R3(config-if)#ip hel
+R3(config-if)#ip halp
+R3(config-if)#ip helper-ad
+R3(config-if)#ip helper-address 10.2.2.2
+R3(config-if)#exit
+R3(config)#
+
+
+PC1
+
+Cisco Packet Tracer PC Command Line 1.0
+C:\>ping 192.168.30.11
+
+Pinging 192.168.30.11 with 32 bytes of data:
+
+Request timed out.
+Reply from 192.168.30.11: bytes=32 time=24ms TTL=125
+Reply from 192.168.30.11: bytes=32 time=23ms TTL=125
+Reply from 192.168.30.11: bytes=32 time=13ms TTL=125
+
+Ping statistics for 192.168.30.11:
+    Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 13ms, Maximum = 24ms, Average = 20ms
+
+C:\>
+
+
+PC2
+
+Cisco Packet Tracer PC Command Line 1.0
+C:\>ping 192.168.10.11
+
+Pinging 192.168.10.11 with 32 bytes of data:
+
+Reply from 192.168.10.11: bytes=32 time=2ms TTL=125
+Reply from 192.168.10.11: bytes=32 time=28ms TTL=125
+Reply from 192.168.10.11: bytes=32 time=16ms TTL=125
+Reply from 192.168.10.11: bytes=32 time=30ms TTL=125
+
+Ping statistics for 192.168.10.11:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 2ms, Maximum = 30ms, Average = 19ms
+
+C:\>

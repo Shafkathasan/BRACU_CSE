@@ -1,0 +1,10 @@
+import java.util.Scanner;
+public class Task01 {
+    public static void main(String[]args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please Input a String");
+        String s = sc.nextLine();
+        int l=s.length();
+        System.out.println("The size of the string is "+l);
+    }
+}

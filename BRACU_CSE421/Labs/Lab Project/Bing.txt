@@ -1,0 +1,64 @@
+how to solve this project step by step
+
+Sure! Here are the steps to solve this project:
+
+1. Create subnets and assign to each branch with the least amount of waste using the network address 192.128.0.0/10.
+2. Connect Dhaka directly with each of the other cities.
+3. Configure California and Tokyo to have two separate web servers. The DNS server will be located in California. If anyone types the URL “www.california..gov” the web server located at California will handle the query and the user will see a webpage that says “Welcome to California!”. Similarly, the web server located in Tokyo will handle requests for “www.japan.com” and return “I love Anime!” when visited through the URL.
+4. Use static addressing for Dhaka and Bucharest while assigning IP addresses using DHCP for other branches.
+5. Set up email servers in Dhaka and Bucharest so that they can exchange mail among themselves.
+6. Establish connections among all the branches with the shortest route possible while keeping in mind that there has to exist at least one floating route among the branches.
+7. Configure at least one network to be routed dynamically and one to be routed statically.
+8. Remember that data will be delivered using static or dynamic routes only as default route cannot be used while exchanging packets.
+9. Test all conditions imposed by submitting a network topology diagram with proper labels, configuration commands of all routers implemented, VLSM tree, and IP address table.
+
+I hope this helps! Let me know if you have any questions or need further assistance.
+
+Here's the VLSM tree for the network:
+
+```
+192.128.0.0/10
+├── Dhaka (150 devices)
+│   ├── Dhaka-Subnet (150 devices)
+│   └── Bucharest (30 devices)
+│       ├── Bucharest-Subnet (30 devices)
+│       └── Floating-Subnet (10 devices)
+├── California (50 devices)
+│   ├── California-Subnet1 (20 devices)
+│   ├── California-Subnet2 (20 devices)
+│   └── Floating-Subnet (10 devices)
+├── Lisbon (11 devices)
+│   └── Lisbon-Subnet (11 devices)
+├── Paris (20 devices)
+│   └── Paris-Subnet (20 devices)
+├── Bucharest (30 devices)
+│   ├── Bucharest-Subnet (30 devices)
+│   └── Floating-Subnet (10 devices)
+├── Tokyo (40 devices)
+│   ├── Tokyo-Subnet1 (20 devices)
+│   ├── Tokyo-Subnet2 (20 devices)
+│   └── Floating-Subnet (10 devices)
+└── Madrid (130 devices)
+    └── Madrid-Subnet (130 devices)
+
+```
+
+I hope this helps! Let me know if you have any questions or need further assistance.
+
+Here's the IP address table for the network:
+
+```
+Branch Name | IP Address | Subnet Mask | Default Gateway
+--------------------------------------------------------
+Dhaka       | 192.128.0.1  | 255.192.0.0   | N/A
+Bucharest   | 192.128.64.1 | 255.255.224.0 | 192.128.64.2
+California  | 192.128.32.1 | 255.255.240.0 | 192.128.32.2
+Lisbon      | 192.128.48.1 | 255.255.255.240 | 192.128.48.2
+Paris       | 192.128.52.1 | 255.255.255.224 | 192.128.52.2
+Bucharest   | 192.128.64.33| 255.255.255.224| N/A
+Tokyo       | 192.128.96.1 | 255.255.252.0 | 192.128.96..2
+Madrid      | 192..128..100..1| 255..255..254..0| N/A
+
+```
+
+I hope this helps! Let me know if you have any questions or need further assistance.

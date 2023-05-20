@@ -1,0 +1,11 @@
+Please read through all the material mentioned below "before" coming to lab. You will not have time to read this in lab, and might struggle with the lab tasks as a consequence.
+
+From the book mentioned below, read pages 61-64 of Chapter 3, the section titled One-Dimensional Arrays.
+
+Pay particular attention to the example programs. It is recommended that you try tracing them to figure out what is going on.
+
+The book:
+Java 2: The Complete Reference, Fifth Edition, by Herbert Schildt
+A pdf copy of this book can be found at:
+\\TSR\CSE\Annajiat\Books\Java 2 The Complete Reference.pdf
+

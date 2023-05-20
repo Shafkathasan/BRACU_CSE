@@ -1,0 +1,21 @@
+public class Q2 {
+    public double x, y;
+    public double i;
+    public double product (double _x, double _y) {
+        x =_x;
+        y =_y;
+        i = x*y;
+        return i;
+    }
+    public double product (int _x, int _y) {
+        x =_x;
+        y =_y;
+        i = x*y;
+        return i;
+    }
+    public static void main(String[] args) {
+        System.out.println(product(2,3));
+        System.out.println(product(5.2,2.5));
+    }
+}
+

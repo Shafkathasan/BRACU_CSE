@@ -1,0 +1,7 @@
+5
+4
+A H T H
+H H T A
+T T H H
+A H T H
+H T H H

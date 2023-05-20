@@ -1,0 +1,7 @@
+public class BadClass{
+  public void someThingBad(){
+    int x = 0;
+    int y;
+    y = 4 /x;
+  }
+}

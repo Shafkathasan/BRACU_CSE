@@ -1,0 +1,7 @@
+public class ECOStudent{
+  String name;
+  String dpt;
+  public double cgpa(){
+    return 3.9;
+  }
+}

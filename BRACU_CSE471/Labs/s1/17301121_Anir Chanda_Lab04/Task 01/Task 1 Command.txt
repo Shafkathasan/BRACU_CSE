@@ -1,0 +1,71 @@
+PC1:
+
+Packet Tracer PC Command Line 1.0
+C:\>ipconfig /all
+C:\>ping 10.10.1.18
+C:\>tracert 10.10.1.18
+C:\>ping 10.10.1.18
+
+
+PC3:
+
+Packet Tracer PC Command Line 1.0
+C:\>ipconfig /all
+C:\>ping 10.10.1.98
+C:\>tracert 10.10.1.98
+C:\>ping 10.10.1.98
+
+
+R1:
+
+User Access Verification
+Password:cisco
+R1>enable
+Password:class
+R1#show ip interface brief
+R1#show ip route
+
+R3:
+
+User Access Verification
+Password:cisco
+R3>enable
+Password:class
+R3#show ip interface brief
+R3#show ip route
+R3#show ipv6 interface brief
+
+
+
+
+R2:
+
+User Access Verification
+Password:cisco
+R2>enable
+Password:class
+R2#show ip interface brief
+R2#configure terminal
+R2(config)#interface s0/0/0
+R2(config-if)#ip address 10.10.1.5 255.255.255.252
+R2(config-if)#
+R2(config-if)#no shutdown
+R2(config-if)#
+
+
+PC2:
+
+Packet Tracer PC Command Line 1.0
+C:\>ipconfig /all
+C:\>ping 2001:DB8:1:4::2
+C:\>tracert 2001:DB8:1:4::2
+C:\>ping 2001:DB8:1:4::2
+
+
+PC4:
+
+Packet Tracer PC Command Line 1.0
+C:\>ipconfig /all
+C:\>ping 2001:DB8:1:1::2
+C:\>tracert 2001:DB8:1:1::2
+C:\>ping 2001:DB8:1:1::2

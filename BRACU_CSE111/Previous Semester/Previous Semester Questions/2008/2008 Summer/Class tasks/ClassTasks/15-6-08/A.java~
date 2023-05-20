@@ -1,0 +1,10 @@
+public class A extends O{
+  public A(){
+    super("Message from A");
+    System.out.println("In As Const");
+  }
+  public A(String txt){
+    System.out.println("In A's New Const "+ txt);
+  }
+  
+}

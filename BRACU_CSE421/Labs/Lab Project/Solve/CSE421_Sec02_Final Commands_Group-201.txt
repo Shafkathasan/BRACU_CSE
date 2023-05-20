@@ -1,0 +1,90 @@
+=> Router01
+
+en
+conf t
+int g0/0
+ip address 192.128.0.1 255.255.255.0
+no shut
+exit
+int s0/0/0
+ip address 192.128.2.209 255.255.255.252
+no shut
+exit
+int s0/0/1
+ip address 192.128.2.213 255.255.255.252
+no shut
+exit
+int s0/1/0
+ip address 192.128.2.217 255.255.255.252
+no shut
+exit
+
+ip route 192.128.1.0 255.255.255.0 192.128.2.218
+ip route 192.128.2.64 255.255.255.192 192.128.2.218
+
+ip route 192.128.2.160 255.255.255.224 192.128.2.214
+ip route 192.128.2.128 255.255.255.224 192.128.2.214
+
+ip route 192.128.2.0 255.255.255.192 192.128.2.210
+ip route 192.128.2.192 255.255.255.240 192.128.2.210
+
+
+
+=> Router02
+
+en
+conf t
+int g0/0
+ip address 192.128.2.1 255.255.255.192
+no shut
+exit
+int g0/1
+ip address 192.128.2.193 255.255.255.240
+no shut
+exit
+int s0/0/0
+ip address 192.128.2.210 255.255.255.252
+no shut
+exit
+ip route 192.128.0.0 255.255.252.0 192.128.2.209
+
+
+
+=> Router03
+
+en
+conf t
+int g0/0
+ip address 192.128.2.161 255.255.255.224
+no shut
+exit
+int g0/1
+ip address 192.128.2.129 255.255.255.224
+no shut
+exit
+int s0/0/1
+ip address 192.128.2.214 255.255.255.252
+no shut
+exit
+ip route 192.128.0.0 255.255.252.0 192.128.2.213
+
+
+
+=> Router04
+
+en
+conf t
+int g0/1
+ip address 192.128.1.1 255.255.255.0
+no shut
+exit
+int g0/0
+ip address 192.128.2.65 255.255.255.192
+no shut
+exit
+int s0/1/0
+ip address 192.128.2.218 255.255.255.252
+no shut
+exit
+ip route 192.128.0.0 255.255.252.0 192.128.2.217
+

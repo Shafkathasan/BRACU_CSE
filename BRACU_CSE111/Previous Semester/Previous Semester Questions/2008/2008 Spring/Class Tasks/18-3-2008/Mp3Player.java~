@@ -1,0 +1,6 @@
+public class Mp3Player{
+  public String sound = "Song";
+  public String makeSound(){
+    return sound;
+  }
+}

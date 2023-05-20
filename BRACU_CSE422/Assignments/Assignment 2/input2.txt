@@ -1,0 +1,6 @@
+5 240
+Bradman 120
+Tendulkar 90
+Sangakkara 70
+Kallis 65
+Lara 80

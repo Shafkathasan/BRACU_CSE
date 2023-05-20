@@ -1,0 +1,14 @@
+public class Student{
+  private String name = "test";
+  public Student(){
+  }
+  public Student(String s){
+    name =s;
+  }
+  public void printName(){    
+    System.out.println(name);
+  }
+  public void setName(String name){
+    this.name = name;
+  }
+}

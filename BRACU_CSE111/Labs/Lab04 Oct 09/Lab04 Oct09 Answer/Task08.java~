@@ -1,0 +1,10 @@
+public class Task08{
+    String name, id, address;
+    double cgpa;
+    public String getName(){
+        retune name;
+    }
+    public String setName(){
+        name=n;
+    }
+}

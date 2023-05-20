@@ -1,0 +1,4 @@
+public abstract class Animal{
+  public String sound = "Animal Sound";
+  public abstract String makeSound();
+}

@@ -1,0 +1,12 @@
+"D:\Program Files\Java\jdk1.5.0_01\bin\javac.exe"
+
+
+echo %PATH%
+
+notepad User.java
+
+type User.java
+
+
+D:\Documents and Settings\mabdullah\Desktop\packages>"D:\Program Files\Java\jdk1
+.5.0_01\bin\javac.exe" User.java

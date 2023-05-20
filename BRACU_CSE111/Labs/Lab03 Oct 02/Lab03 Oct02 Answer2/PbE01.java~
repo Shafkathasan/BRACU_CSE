@@ -1,0 +1,11 @@
+import java.util.Scanner;
+class PbE01 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string : ");
+        String s = sc.nextLine();
+        char[] charArray = s.toCharArray();
+        Arrays.sort(charArray);
+        System.out.println("Sorted string " + String.valueOf(charArray));
+    }
+}
