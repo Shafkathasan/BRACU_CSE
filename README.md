@@ -1,6 +1,6 @@
 # BRACU_CSE
 
-BRACU CSE110, CSE111, CSE220, CSE221, CSE321, CSE330, CSE420, CSE421, CSE422, CSE423, CSE471, PHY112. <br> <br>
+BRACU CSE110, CSE111, CSE220, CSE221, CSE321, CSE330, CSE420, CSE421, CSE422, CSE423, CSE425, CSE447, CSE471, PHY112. <br> <br>
 This are the Labs & Project codes & My all other material of BRACU.
 There are lots of way to Solve this Problems. As a beginner I tried my best. If there are Any Problem in Solution let Me know.<br>
 
