@@ -1,0 +1,14 @@
+#2
+a) Alice's browser will issue a warning that the certificate verification has failed, and give Alice the option to stop or continue. If Alice chooses to stop attack fails
+ 
+
+b) If Alice chooses to continue after the browser warning, the attack will succeed
+
+#3
+a) To begin the authentication process, a small amount of encrypted data that is issued by a server in the Kerberos authentication model is known as TICKET-GRANTING TICKET (TGT). They are used to obtain tickets that enable access to network resources
+
+b) When Alice present her TGT to the KDC, the KDC can decrypt it, Alice can then use her TGT (credentials) to securely access network resources
+
+c)  Because K KDC is only known by KDC, so others can only get TGT, but can not forge it
+
+d) Extra work and no added security
