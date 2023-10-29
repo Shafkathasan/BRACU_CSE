@@ -1,0 +1,40 @@
+Computer Interfacing CSE360
+
+Brac University
+
+Spring 2022
+
+Assignment 2
+
+Marks: 20
+
+DEADLINE: 8th March
+
+                                     Questions
+
+1. Assume you have connected a mouse to Port B and a Graphics Tablet to port A of the  82C55 PPI.
+
+a. In which mode Port A and B are working? Also write the control word in which  the 82C55 should be programmed.                                                              (Marks 2)
+
+b. Draw a diagram showing the configuration of the 82C55 IC (Hint: specify the  configuration of Port A, Port B and Port C pins).                                      (Marks 2)
+
+Now suppose you have tapped a picture on your screen and after a while the picture  pops out and opens.
+
+a. Describe the sequences and process that takes place between the 82C55 and the  Graphics Tablet. You should mention the sequence in which the signals are  generated and the pins that are involved in the process.                          (Marks 4)
+
+ b. Draw a timing diagram to support your explanation.                          (Marks 2)  
+
+2. Suppose, a peripheral device Keyboard is connected to Port A and a monitor is  connected to Port B of the 82C55 PPI.
+
+a. Write the Control Bits to configure the 82C55 IC.                                 (Marks 1)
+
+b. Draw a diagram showing the configuration of the 82C55 IC (Hint: specify the  configuration of Port A, Port B and Port C  pins)                                      (Marks 2)                                   
+
+
+c. Suppose you pressed the ‘B’ key on the keyboard. Write down the steps that will  take place in the 82C55 IC. Draw a timing diagram  accordingly.         (Marks 3.5)
+
+
+d. Now, you want to see the ‘B’ in the monitor, Write down the steps that will take  place in the 82C55 IC. Draw a timing diagram accordingly.                  (Marks 3.5)
+
+
+End
